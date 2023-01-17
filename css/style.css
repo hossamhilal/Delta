@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-
+    
 }
 
 body {
@@ -20,7 +20,8 @@ body {
     direction: ltr;
     text-align: left;
     overflow-x: hidden;
-    color: #202258;
+    color: #000;
+    font-weight: 300;
 }
 
 .enFont {
@@ -73,8 +74,8 @@ p {
 }
 
 .primaryBtn {
-    color: #fff;
-    background: #5584FF;
+    color: #212529;
+    background: #ffc107;
     margin-inline-end: 30px;
     border: 0;
 }
@@ -86,7 +87,7 @@ p {
     content: "";
     width: 20px;
     height: 20px;
-    background: #0b42cd;
+    background: #a97e00;
     border-radius: 50%;
 }
 
@@ -163,30 +164,6 @@ p {
     color: #fff;
 }
 
-.linkBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    margin-inline-start: auto;
-    color: #5584FF;
-    padding-inline-start: 5px;
-    text-transform: capitalize;
-    font-size: 16px;
-    background: linear-gradient(0deg, #0b42cd, #0b42cd) no-repeat right bottom / 0 100%;
-    transition: background-size 350ms;
-}
-
-.linkBtn:hover {
-    color: #fff;
-    background-size: 100% 100%;
-    background-position-x: left;
-}
-
-.linkBtn span {
-    margin-inline-end: 12px;
-}
-
 @media screen and (max-width:768px) {
     .siteBtn {
         font-size: 13px;
@@ -195,10 +172,6 @@ p {
     
     .primaryBtn {
         margin-inline-end: 15px;
-    }
-
-    .linkBtn {
-        font-size: 13px;
     }
 }
 
@@ -210,16 +183,10 @@ p {
 .header {
     position: relative;
     padding: 30px 0;
-    background: transparent linear-gradient(180deg, #5584FF52 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
-    height: 100vh;
-}
-
-.headerWrapper {
-    background-image: url('../images/hand.png');
-    background-position: right bottom;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: url('../images/slide.jpg') no-repeat;
+    background-size: cover;
+    border-radius: 0 0 0 180px;
+    min-height: calc(100vh + 200px);
 }
 
 .sticky {
@@ -264,18 +231,18 @@ p {
 }
 
 .navMenu a {
-    color: #202258;
-    font-size: 16px;
+    color: #fff;
+    font-size: 13px;
     text-transform: capitalize;
     position: relative;
 }
 
 .navMenu .active a {
-    color: #5584FF;
+    color: #ffc107;
 }
 
 .navMenu a::before {
-    color: #0b42cd;
+    /* color: #fecc04; */
     position: absolute;
     top: -1px;
     left: 0px;
@@ -288,7 +255,7 @@ p {
     transition-duration: 0.9s;
     transition-property: width;
     will-change: width;
-    -webkit-text-fill-color: #0b42cd;
+    -webkit-text-fill-color: #ffc107;
     -webkit-text-stroke: unset;
 }
 
@@ -296,10 +263,51 @@ p {
     width: 100%;
 }
 
+.language {
+    margin-inline-start: 40px;
+}
+
+.language a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f3f3f3;
+    background: #6c757d;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.language a:hover {
+    border-color: #ffc107;
+    background: #ffc107;
+}
+
 .mb {
     display: none;
 }
 
+.headerSlider {
+    padding: 60px 0;
+    color: #fff;
+}
+
+.headerSlider h1 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.headerSlider p {
+    color: inherit;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
 
 @media screen and (max-width:768px) {
     .header {
@@ -407,8 +415,53 @@ p {
 }
 
 /**************************************************************************************************/
-/****************************************      Posts       ****************************************/
+/**************************************      materials       **************************************/
 /**************************************************************************************************/
+
+.materials {
+    padding-inline-start: 16%;
+    margin-top: -100px;
+}
+
+.materialsContent {
+    padding: 150px 0 30px;
+}
+
+.materials h2 {
+    text-transform: capitalize;
+}
+
+.material {
+    border-radius: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.material img {
+    border-radius: inherit;
+}
+
+.materialTitle {
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 15% 5%;
+    color: #fff;
+}
+
+.materialTitle h3 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 
 
 @media screen and (max-width:768px) {
