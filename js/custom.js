@@ -124,24 +124,25 @@
                 items:2
             },
             600:{
-                items:3
+                items:2,
+                stagePadding: 50
             },
             1000:{
-                items:4
+                items:3,
+                stagePadding: 50
             }
         }
     });
 
-     // Go to the previous item
-     $('.teamPrevious').click(function() {
-        teamOwl.trigger('prev.owl.carousel');
-    });
+    // let gridWidth = $('.grid').width();
+    // $('.grid').masonry({
+    //     // options...
+    //     columnWidth: '.grid-sizer',
+    //     itemSelector: '.grid-item',
+    //     percentPosition: true
+    //     // columnWidth: gridWidth/4
+    // });
 
-    // Go to the next item
-    $('.teamNext').click(function() {
-        teamOwl.trigger('next.owl.carousel');
-    });
-    
 
 
     // iniat WOW Js
