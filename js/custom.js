@@ -2,80 +2,27 @@
 (function ($) {
     "use strict";
 
-    // // Pre Loading 
-    // window.onpaint = preloadFunc();
-    // function preloadFunc() {
-    //     $('body').addClass('stopScroll');
-    // }
+    // Pre Loading 
+    window.onpaint = preloadFunc();
+    function preloadFunc() {
+        $('body').addClass('stopScroll');
+    }
     
     // Loader 
-    // $(window).on('load', function () { 
-    //     setTimeout(function () {
-    //         $('.loader').fadeOut(3000, function () {
-    //             $('body').removeClass('stopScroll');
-    //             $(this).remove();
-    //         }); 
-    //     },5000);   
-    // });
+    $(window).on('load', function () { 
+        setTimeout(function () {
+            $('.loader').fadeOut(2000, function () {
+                $('body').removeClass('stopScroll');
+                $(this).remove();
+            }); 
+        },1000);   
+    });
 
     // sticky navbar
-    // let viewHeight = window.innerHeight;
-    // $(window).on('scroll',function () {
-    //    $(window).scrollTop() > (viewHeight + 100) ? $('.navWrapper').addClass('sticky') : $('.navWrapper').removeClass('sticky');
-    // });
-
- 
-    // Scroll Menu
-    // $('.navMenu a').on('click', function (e) {
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: $($(this).attr('href')).offset().top - 100
-    //     }, 2000, 'linear');
-    //     $('.mainMenu li').removeClass('active');
-    //     $(this).parent().addClass('active');
-    // });  
-
-    // $(window).on('scroll',function () {
-    //     var sections = $('section')
-    //     sections.each(function() {
-    //         let top = window.scrollY ;
-    //         var secOffset = $(this).offset().top - 100,
-    //             bottom = top + $(this).outerHeight();
-            
-    //         if (top >= secOffset && top <= bottom) {
-    //             let activeId = $(this).attr('id');
-    //             $('.navMenu li').removeClass('active');
-                
-    //             $('.navMenu a[href="#'+activeId+'"]').parent().addClass('active');
-    //         }
-    //     });
-    // });
-    
-
-    // COUNTER
-    // let a = 0;
-    // $(window).scroll(function() {
-    //     var oTop = $('.features').offset().top - window.innerHeight;
-    //     if (a == 0 && $(window).scrollTop() > oTop) {
-    //         count();
-    //     }
-    // });
-
-    // function count () {
-    //     $('.statistic h3').each(function () {
-    //         // let countNum = $(this).text();
-    //         $(this).prop('Counter',0).animate({
-    //             Counter: $(this).text()
-    //         }, {
-    //             duration: 7000,
-    //             easing: 'swing',
-    //             step: function (now) {
-    //                 $(this).text(Math.ceil(now));
-    //             }
-    //         });
-    //     });
-    //     a = 1;
-    // }
+    let viewHeight = window.innerHeight + 100;
+    $(window).on('scroll',function () {
+       $(window).scrollTop() > viewHeight ? $('.navWrapper').addClass('sticky') : $('.navWrapper').removeClass('sticky');
+    });
 
     // OPEN SIDE  MENU 
     $('.menuBtn').on('click', function () {
@@ -93,13 +40,19 @@
         $('body').removeClass('stopScroll');
     });
 
-    
+    let isRTL = $('body').hasClass('ar') ? true : false;
     // Header Carousel 
-    $('.owlHeader').owlCarousel({
+    let owl = $('.owlHeader').owlCarousel({
+        rtl:isRTL,
         loop:true,
         margin:0,
         nav:false,
         dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        checkVisible: false,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
         responsive:{
             0:{
                 items:1
@@ -115,6 +68,7 @@
 
     // Team Carousel 
    $('.owlMaterials').owlCarousel({
+        rtl:isRTL,
         loop:true,
         margin:20,
         nav:false,
@@ -134,18 +88,7 @@
         }
     });
 
-    // let gridWidth = $('.grid').width();
-    // $('.grid').masonry({
-    //     // options...
-    //     columnWidth: '.grid-sizer',
-    //     itemSelector: '.grid-item',
-    //     percentPosition: true
-    //     // columnWidth: gridWidth/4
-    // });
-
-
-
-    // iniat WOW Js
+    // init WOW Js
     new WOW().init();
 
 
